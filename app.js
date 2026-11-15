@@ -187,4 +187,47 @@
       }
     });
   }
+
+  const viewer = document.querySelector("[data-viewer]");
+  if (viewer) {
+    const frame = viewer.querySelector("[data-frame]");
+    const sw = viewer.querySelector("[data-switch]");
+    const opts = [...sw.querySelectorAll("[data-pkg]")];
+    let site = "";
+    const load = (pkg) => {
+      const i = opts.findIndex((o) => o.dataset.pkg === pkg);
+      opts.forEach((o, j) => { o.setAttribute("aria-checked", String(i === j)); o.tabIndex = i === j ? 0 : -1; });
+      sw.style.setProperty("--i", i);
+      viewer.classList.add("is-loading");
+      frame.src = `muster/${site}/${pkg}/index.html`;
+    };
+    frame.addEventListener("load", () => viewer.classList.remove("is-loading"));
+    document.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => {
+      site = b.dataset.open;
+      viewer.setAttribute("aria-label", "Vorschau: " + b.dataset.name);
+      load("standard");
+      viewer.showModal();
+      root.style.overflow = "hidden";
+      history.pushState({ viewer: true }, "", "#" + site);
+    }));
+    opts.forEach((o, i) => {
+      o.addEventListener("click", () => load(o.dataset.pkg));
+      o.addEventListener("keydown", (e) => {
+        const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        const n = opts[(i + d + opts.length) % opts.length];
+        load(n.dataset.pkg); n.focus();
+      });
+    });
+    viewer.addEventListener("close", () => {
+      root.style.overflow = "";
+      frame.removeAttribute("src");
+      if (history.state && history.state.viewer) history.back();
+    });
+    viewer.querySelector("[data-close]").addEventListener("click", () => viewer.close());
+    window.addEventListener("popstate", () => { if (viewer.open) viewer.close(); });
+    const deep = document.querySelector(`[data-open="${location.hash.slice(1)}"]`);
+    if (deep) deep.click();
+  }
 })();

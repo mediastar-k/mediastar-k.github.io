@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Webdesign Beispiele: Handwerk, Friseur, Steuerberater | Media Star</title>
+<meta name="description" content="Website-Beispiele von Media Star: individuell gestaltete Musterseiten für Tischler, Friseur und Steuerberatung, jeweils als Basis, Standard und Premium. Keine Templates, kein Baukasten.">
+<meta name="theme-color" content="#1c0a0e">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Media Star">
+<meta property="og:title" content="Webdesign Beispiele: Handwerk, Friseur, Steuerberater | Media Star">
+<meta property="og:description" content="Website-Beispiele von Media Star: individuell gestaltete Musterseiten für Tischler, Friseur und Steuerberatung, jeweils als Basis, Standard und Premium. Keine Templates, kein Baukasten.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ein heller Lichtstern auf dunkelrotem Grund, daneben der Schriftzug Media Star">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Webdesign Beispiele: Handwerk, Friseur, Steuerberater | Media Star">
+<meta name="twitter:description" content="Website-Beispiele von Media Star: individuell gestaltete Musterseiten für Tischler, Friseur und Steuerberatung, jeweils als Basis, Standard und Premium. Keine Templates, kein Baukasten.">
+<meta name="twitter:image" content="assets/og-image.jpg">
+<link rel="canonical" href="https://media-star-agency.de/portfolio.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="mark" viewBox="0 0 64 64"><path d="M62 32Q38 36 32 56Q26 36 2 32Q26 28 32 8Q38 28 62 32Z"/></symbol>
+</svg>
+
+<header class="bar bar--solid">
+  <nav class="bar__inner" aria-label="Hauptnavigation">
+    <a class="brand" href="index.html" aria-label="Media Star, zur Startseite">
+      <svg class="brand__mark" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="brand__name">Media Star</span>
+    </a>
+    <ul class="bar__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="pakete.html">Pakete</a></li>
+      <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+      <li><a class="bar__cta" href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="inhalt" class="page">
+  <section class="folio" aria-labelledby="folio-title">
+    <div class="container">
+      <div class="folio__head">
+        <h1 class="folio__title" id="folio-title" data-reveal>Portfolio: Webdesign-Beispiele</h1>
+        <p class="folio__lead" data-reveal>Öffnen Sie eine Musterseite und wechseln Sie unten am Bildschirm jederzeit zwischen Basis, Standard und Premium.</p>
+        <aside class="folio__note" data-reveal><svg aria-hidden="true"><use href="#mark"/></svg><p><strong>Keine Vorlagen, kein Baukasten.</strong> Jede Musterseite ist eigens gestaltet und dient als Referenz: Sie zeigt, wie eine Website im jeweiligen Paket aussehen kann. Es handelt sich nicht um echte Kundenprojekte.</p></aside>
+      </div>
+      <h2 class="visually-hidden">Musterseiten für Tischler, Friseur und Steuerberatung</h2>
+      <ul class="deck" data-reveal>
+        <li><button class="deck__card" type="button" data-open="friseur" data-name="Friseur" aria-label="Musterseite Friseur öffnen">
+          <span class="deck__window"><span class="deck__dots" aria-hidden="true"><i></i><i></i><i></i></span><img src="assets/portfolio/friseur.jpg" alt="" width="1200" height="750" loading="lazy"></span>
+          <span class="deck__label" aria-hidden="true">Friseur</span>
+        </button></li>
+        <li><button class="deck__card" type="button" data-open="handwerk" data-name="Tischler" aria-label="Musterseite Tischler öffnen">
+          <span class="deck__window"><span class="deck__dots" aria-hidden="true"><i></i><i></i><i></i></span><img src="assets/portfolio/handwerk.jpg" alt="" width="1200" height="750" loading="lazy"></span>
+          <span class="deck__label" aria-hidden="true">Tischler</span>
+        </button></li>
+        <li><button class="deck__card" type="button" data-open="steuer" data-name="Steuerberatung" aria-label="Musterseite Steuerberatung öffnen">
+          <span class="deck__window"><span class="deck__dots" aria-hidden="true"><i></i><i></i><i></i></span><img src="assets/portfolio/steuer.jpg" alt="" width="1200" height="750" loading="lazy"></span>
+          <span class="deck__label" aria-hidden="true">Steuerberatung</span>
+        </button></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<dialog class="viewer" data-viewer aria-label="Vorschau der Musterseite">
+  <iframe class="viewer__frame" title="Musterseite" data-frame></iframe>
+  <div class="dock">
+  <button class="viewer__close" type="button" data-close aria-label="Vorschau schließen"><span aria-hidden="true"></span></button>
+  <div class="switch" role="radiogroup" aria-label="Paket wählen" data-switch>
+    <span class="switch__thumb" aria-hidden="true"></span>
+    <button type="button" role="radio" aria-checked="false" data-pkg="basis">Basis</button>
+    <button type="button" role="radio" aria-checked="true" data-pkg="standard">Standard</button>
+    <button type="button" role="radio" aria-checked="false" data-pkg="premium">Premium</button>
+  </div>
+  </div>
+</dialog>
+
+<footer class="foot">
+  <div class="container foot__inner">
+    <a class="brand brand--foot" href="index.html" aria-label="Media Star, zur Startseite">
+      <svg class="brand__mark" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="brand__name">Media Star</span>
+    </a>
+    <ul class="foot__links" aria-label="Seitenbereiche">
+      <li><a href="messwerte.html">Messwerte</a></li>
+    </ul>
+    <address class="foot__contact">
+      <a href="mailto:media.star@web.de">media.star@web.de</a>
+    </address>
+    <ul class="foot__links foot__legal" aria-label="Rechtliches">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="impressum.html#datenschutz">Datenschutzerklärung</a></li>
+    </ul>
+    <p class="foot__copy">© <span data-year>2026</span> Media Star</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
