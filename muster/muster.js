@@ -40,7 +40,7 @@
 
   const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
   const clamp = (v) => Math.min(1, Math.max(0, v));
-  const hs = motion ? [...d.querySelectorAll("[data-hscroll]")] : [];
+  const hs = motion && fine ? [...d.querySelectorAll("[data-hscroll]")] : [];
   const words = motion ? [...d.querySelectorAll("[data-words]")] : [];
   words.forEach((el) => { el.innerHTML = el.textContent.trim().split(/\s+/).map((w) => `<span class="w">${w}</span>`).join(" "); });
   const sizeHs = () => hs.forEach((s) => { const t = s.querySelector("[data-track]"); s.style.height = `${t.scrollWidth - innerWidth + innerHeight}px`; });

@@ -177,7 +177,7 @@ html:not(.anim) * { transition: none !important; }
   .hero__title em { padding-left: 0; }
 }
 
-.pkg-basis .bar { position: static; padding: 0; background: var(--esp); }
+.pkg-basis .bar { position: relative; padding: 0; background: var(--esp); }
 .pkg-basis .bar__in { width: 100%; max-width: none; justify-content: space-between; border-radius: 0; box-shadow: none; background: none; padding: 10px var(--pad); -webkit-backdrop-filter: none; backdrop-filter: none; }
 .hb { background: radial-gradient(ellipse at 80% 20%, rgba(184, 117, 79, 0.28), transparent 60%), var(--esp); color: var(--cream); }
 .hb__in { display: grid; gap: 22px; justify-items: start; padding-block: clamp(72px, 11vw, 140px); }
@@ -249,3 +249,11 @@ html:not(.anim) .hz__track { width: auto; overflow-x: auto; }
 h1, h2, em, .logo span, .intro-s__big, .menu__col li b, .member h3, .look h3, .names b, .foot__claim, .marquee b, .curtain span { font-weight: 500; font-optical-sizing: none; font-variation-settings: "opsz" 11; }
 body { font-weight: 420; }
 .f span, .member__role, .menu__col h3, .hours dt, .foot__meta { font-weight: 500; }
+@media (hover: none), (pointer: coarse) {
+  .hz__sticky { position: static; height: auto; padding-block: var(--gap); }
+  .hz__track { width: auto; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); scrollbar-width: none; }
+  .hz__sticky::after { content: "Wischen für mehr  →"; padding-inline: var(--pad); margin-top: -24px; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); }
+}
+@media (max-width: 40rem) {
+  .pkg-standard :is(.hs-split__img, .intro-s__img) { display: none; }
+}

@@ -188,12 +188,12 @@ html:not(.anim) * { transition: none !important; }
   .facts div { grid-template-columns: 1fr; gap: 2px; }
 }
 
-.pkg-basis .bar { position: static; }
+.pkg-basis .bar { position: relative; }
 .pkg-basis #nav a { border: 0; min-height: 60px; }
 .pkg-basis #nav li:last-child a { background: none; color: inherit; text-decoration: underline; }
 .hb { background: linear-gradient(rgba(22, 21, 18, 0.62), rgba(22, 21, 18, 0.62)), url("hw-eiche.jpg") center / cover; color: var(--paper); }
 .hb__in { display: grid; gap: 20px; justify-items: start; padding-block: clamp(80px, 12vw, 150px); }
-.hb h1 { font-size: clamp(2.4rem, 5.5vw, 4.4rem); }
+.hb h1 { font-size: min(clamp(2.4rem, 5.5vw, 4.4rem), 10.5vw); }
 .hb p { max-width: 44ch; color: #D9D3C7; }
 .hb .btn { background: var(--paper); color: var(--ink); }
 .hb-h { font-size: clamp(1.8rem, 3.6vw, 2.8rem); margin-bottom: 32px; }
@@ -264,6 +264,7 @@ html:not(.anim) .hs__item { flex: none; }
 [data-tilt] { transition: transform 500ms var(--ease); }
 @media (max-width: 60rem) {
   .cards, .grid3 { grid-template-columns: 1fr; }
+  .grid3 img { height: auto; }
   .pkg-premium:has(.hp) .bar:not(.is-scrolled) { color: var(--ink); background: var(--paper); }
   .hp__dx, .hp__dy { display: none; }
 }
@@ -280,4 +281,15 @@ html:not(.anim) .hs__item { flex: none; }
   .hero__frame .frame__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(22, 21, 18, 0.45), rgba(22, 21, 18, 0.1)); }
   .hero .dim--x { left: var(--pad); right: var(--pad); }
   .hero .dim { display: none; }
+}
+@media (max-width: 60rem) {
+  .row__bar { grid-template-columns: 1fr; }
+  .hs__head { flex-wrap: wrap; gap: 8px 24px; }
+  .intro h1 { font-size: 10vw; }
+}
+@media (hover: none), (pointer: coarse) {
+  .hs__sticky { position: static; height: auto; padding-block: var(--gap); grid-template-columns: minmax(0, 1fr); }
+  .hs__track { width: auto; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); scrollbar-width: none; }
+  .hs__item { flex: none; scroll-snap-align: start; }
+  .hs__sticky::after { content: "Wischen für mehr  →"; padding-inline: var(--pad); margin-top: -16px; font: 0.75rem "JBMono", monospace; letter-spacing: 0.08em; text-transform: uppercase; }
 }
