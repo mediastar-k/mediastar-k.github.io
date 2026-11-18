@@ -180,7 +180,7 @@
         form.reset();
         say("Danke! Ihre Nachricht ist bei uns angekommen.", false);
       } catch {
-        say("Das hat leider nicht geklappt. Bitte schreiben Sie uns direkt an media.star@web.de.", true);
+        say("Das hat leider nicht geklappt. Bitte schreiben Sie uns direkt an info@media-star-agency.de.", true);
       } finally {
         submit.disabled = false;
         submit.textContent = "Nachricht senden";
